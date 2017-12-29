@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <title>Flip</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Font awesome:  Fonts and icons for your website -->
+        <script src="https://use.fontawesome.com/b217457a6e.js"></script>
+        
+        <!--<link rel="stylesheet" type="text/css" href="CSS/Estiloss.css"-->
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+       
+      
+    </head>
+
+    <style>
+
+        body {
+            font-family: helvetica, arial, verdana, sans-serif;
+        }
+
+        div.container {
+            width: 100%;
+            border: 1px solid gray;
+        }
+
+        header, h1 {
+            padding: 1em;
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+        .inputCtls {
+            color: black;
+            width: 50px;
+            margin-right: 5px;
+        }
+
+    </style>
+    
+    <body>
+
+        <div class="container">
+        
+            <h1><span class="text-muted">Flip</span></h1>
+
+            <div style="width:1000px; margin: 0 auto;">
+              
+                <p>Flip result: </p>
+                <p id="res"></p>
+              
+            </div>
+            
+            <div class="footer">
+                <input class="inputCtls" type="text" id="num"><br>
+                <input class="button" id="btnFlip" type="button" value="Flip"
+        onclick="init();" />
+            </div>
+
+        </div><!--Container-->
+    </body>
+
+    <script type="text/javascript">
+
+        function flip() {
+            return Math.random() >= 0.5;
+        }
+
+        function randomNumber(n) {
+        	var i;
+            var f = flip();
+            console.log("Complete function: " + flip.toString());
+            var cmd = "";
+            for (i = 37; i <= 50; i++) {
+            	cmd = cmd + flip.toString()[i];
+            }
+            console.log("cmd = " + cmd);
+            var ex = eval(cmd);
+            console.log("ex = " + ex);
+            return Math.floor(ex * n);
+        }
+
+        function init() {
+            var n = document.getElementById("num").value;
+        	document.getElementById("res").innerHTML = randomNumber(n);
+        }
+
+    </script>
+
+</html>
